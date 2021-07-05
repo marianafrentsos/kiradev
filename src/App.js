@@ -3,14 +3,14 @@ import './variables/variables.scss'
 import React from "react";
 import Landing from './components/Landing/Landing'
 import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
+import Skills from "./components/Skills/Skills";
 
 function App() {
   return (
       <>
         <Landing/>
         <About/>
-        <Projects/>
+        <Skills/>
       </>
   );
 }

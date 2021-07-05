@@ -43,7 +43,7 @@ class Landing extends Component {
 
     handleScroll(event) {
         let scrollTop = event.target.body.scrollTop,
-            itemTranslate = {'backgroundColor': 'blue'};
+            itemTranslate = {'backgroundColor': 'black'};
             // itemTranslate = Math.min(0, scrollTop/3 - 60);
 
         this.setState({

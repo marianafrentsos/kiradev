@@ -2,18 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import about from '../../assets/about.svg'
 import { FaHiking } from 'react-icons/fa';
-import { GiPaddles } from 'react-icons/gi';
+import {GiCampingTent, GiPaddles} from 'react-icons/gi';
 import { GiPopcorn } from 'react-icons/gi';
 import { BiWinkSmile } from "react-icons/bi";
+
 const StyledAbout = styled.div`
   overflow: hidden;
-  height: 100vh;
   width: 100%;
   position: relative;
   background-color: #000000;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   align-content: center;
   align-items: center;
 
@@ -30,12 +29,13 @@ const StyledAbout = styled.div`
 
   @media (max-width: 768px), (min-width: 768px) {
     flex-direction: column;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    height: 75rem;
   }
   @media (min-width: 1025px) {
     flex-direction: row;
     padding: 0 5rem;
-
+    height: 50rem;
   }
 `
 const StyledDivWrapper = styled.div `
@@ -43,7 +43,7 @@ const StyledDivWrapper = styled.div `
     max-width: 100%;
   }
   @media (min-width: 1025px){
-    max-width: 70%;
+    max-width: 40%;
   }
   
 `
@@ -74,9 +74,16 @@ const StyledUl = styled.ul `
   font-size: 1.2rem;
 
   li {
+    display: flex;
     padding: 0.7rem 0;
-      list-style: none;
+    list-style: none;
+    align-content: center;
+    
+    svg {
+      padding-right: 0.5rem;
+      align-self: center;
     }
+  }
 `
 
 const About = () => {
@@ -84,13 +91,14 @@ const About = () => {
         <>
             <StyledAbout id='about'>
                 <StyledDiv>
-                    <h5>Front end developer & Programmer </h5>
-                    <p>Besides coding and learning every day about web development, I love: </p>
+                    <h5>Just me...</h5>
+                    <p>When I am not coding or just trying to solve a problem, you can find me: </p>
                     <StyledUl>
                         <li><FaHiking/> hiking</li>
                         <li><GiPaddles/> kayaking</li>
                         <li><GiPopcorn/> watching movies</li>
                         <li><BiWinkSmile/> spending time with my family</li>
+                        <li><GiCampingTent/>Camping</li>
                     </StyledUl>
                 </StyledDiv>
                 <StyledDivWrapper>

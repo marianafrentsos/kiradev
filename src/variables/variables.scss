@@ -1,5 +1,5 @@
 :root {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, monospace;
   color: #cdcac0;
 }
 
@@ -8,12 +8,13 @@ body {
 }
 $base-font: Montserrat, sans-serif;
 $base-color: #cdcac0;
+$svg-color: #dea80f;
 
 $mq-breakpoints: (
         mobile:  320px,
         tablet:  740px,
-        desktop: 980px,
-        wide:    1300px
+        desktop: 1025px,
+        wide:    1400px
 );
 
 // To enable support for browsers that do not support @media queries,
@@ -28,8 +29,8 @@ $mq-responsive: true;
 $mq-breakpoints: (
         mobile:  320px,
         tablet:  740px,
-        desktop: 980px,
-        wide:    1300px,
+        desktop: 1025px,
+        wide:    1400px,
 
   // Tweakpoints
         desktopAd: 810px,
@@ -47,3 +48,161 @@ $mq-static-breakpoint: desktop;
 $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
 
 @import '~sass-mq';
+
+
+@mixin on-circle($item-count, $circle-size, $item-size) {
+  list-style: none;
+
+  > * {
+    position: absolute;
+    left: 35%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -($item-size / 2);
+
+    $angle: (360 / $item-count);
+    $rot: 0;
+
+    @for $i from 1 through $item-count {
+      &:nth-of-type(#{$i}) {
+        transform:
+                rotate($rot * 1deg)
+                translate($circle-size)
+                rotate($rot * -1deg);
+      }
+
+      $rot: $rot + $angle;
+    }
+  }
+}
+
+/*------------------------------------*\
+    #Reset
+\*------------------------------------*/
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font: inherit;
+  line-height: inherit;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+main,
+mark,
+menu,
+nav,
+noscript,
+object,
+ol,
+output,
+p,
+pre,
+q,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+// This is required for the images so it won't add
+// extra 4px under the image, when having the image in a container
+img {
+  vertical-align: middle;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a,
+a:active,
+a:visited {
+  color: inherit;
+}
+
+*:focus {
+  outline: none;
+  outline: 0;
+}
