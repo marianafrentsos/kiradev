@@ -12,12 +12,13 @@ const StyledIntroduction = styled.div`
   position: absolute;
   
   p:first-of-type{
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     margin: 0;
   }
   
   p:last-of-type{
     font-size: 2rem;
+    margin-top: 2rem;
   }
 `
 const Introduction = () => {

@@ -10,17 +10,11 @@ import {
 } from "react-icons/all";
 import React from "react";
 
-import { useInView } from 'react-intersection-observer';
 
 const SkillsList = () => {
-    const [ref, inView] = useInView({
-        triggerOnce: true,
-        rootMargin: '-1px 0px',
-    });
-
     return (
         <>
-            <ul ref={ref} className='circle-container' style={{ opacity: inView ? 1 : 0, transition: 'all 4s ease-out' }}>
+            <ul className='circle-container'>
                 <li><SiWebstorm/><span>webstorm</span></li>
                 <li><FaGithubSquare/><span>Git</span></li>
                 <li><SiCss3/><span>Css3</span></li>
@@ -35,6 +29,6 @@ const SkillsList = () => {
         </>
     )
 
-};
+}
 
 export default SkillsList;

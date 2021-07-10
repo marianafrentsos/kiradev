@@ -4,6 +4,7 @@ import projects from '../../assets/projects5.svg'
 import './SkillsList.scss'
 import Presentation from "./Presentation";
 import SkillsList from "./SkillsList";
+import {useInView} from "react-intersection-observer";
 
 const StyledProjects = styled.div`
   overflow: hidden;
@@ -11,6 +12,8 @@ const StyledProjects = styled.div`
   position: relative;
   background-color: #cdcac0;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   :after {
     content: "";
@@ -32,7 +35,8 @@ const StyledProjects = styled.div`
   @media (min-width: 1025px) {
     height: 65rem;
     flex-direction: row;
-    padding: 2rem;
+    padding: 5rem;
+    align-items: flex-start;
   }
 `
 
@@ -43,7 +47,7 @@ const fadeIn = keyframes `
 const StyledDivWrapper = styled.div `
   animation: ${fadeIn} fade-in 1.4s;
   margin: 0 auto;
-
+  align-self: center;
 
   @media (max-width: 768px), (min-width: 768px) {
     padding-left: 0;
@@ -52,22 +56,25 @@ const StyledDivWrapper = styled.div `
   }
   
   @media (min-width: 1025px){
-    max-width: 559px;
+    max-width: 515px;
     position: relative;
-    top: 40%;
-    padding-left: 6rem;
     order: 0;
   }
   
-  @media (min-width: 1240px) {
-    top: 37%;
+  @media (max-width: 1024px) {
+    max-width: 350px;
   }
 `
 
 const Skills = () => {
+    const [ref, inView] = useInView({
+        triggerOnce: true,
+        rootMargin: '-50px 0px',
+    });
+
     return (
         <>
-            <StyledProjects id='projects'>
+            <StyledProjects id='skills' ref={ref} style={{ opacity: inView ? 1 : 0, transition: 'all 4s ease-out' }}>
                 <StyledDivWrapper>
                     <img src={projects} alt={""}/>
                 </StyledDivWrapper>

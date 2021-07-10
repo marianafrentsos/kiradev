@@ -8,7 +8,9 @@ body {
 }
 $base-font: Montserrat, sans-serif;
 $base-color: #cdcac0;
+$color-black: #000;
 $svg-color: #dea80f;
+$brand: ".kira-";
 
 $mq-breakpoints: (
         mobile:  320px,
@@ -205,4 +207,8 @@ a:visited {
 *:focus {
   outline: none;
   outline: 0;
+}
+
+.hide {
+  display: none;
 }

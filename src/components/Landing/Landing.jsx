@@ -65,20 +65,4 @@ class Landing extends Component {
 
     }
 }
-// const Landing = () => {
-//
-//     componentDidMount () {
-//         window.addEventListener('scroll', this.handleScroll);
-//     }
-//
-//     return (
-//              <>
-//                  <StyledLanding id='landing'>
-//                      <Navigation></Navigation>
-//                      <Video></Video>
-//                      <Introduction></Introduction>
-//                  </StyledLanding>
-//              </>
-//         )
-//     }
-    export default Landing;
+export default Landing;
