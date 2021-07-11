@@ -25,7 +25,7 @@ function Card({ children }) {
     return (
         <animated.div
             ref={ref}
-            className="card"
+            className="kira-card"
             onMouseEnter={() => setHovered(true)}
             onMouseMove={({ clientX, clientY }) => {
                 // Get mouse x position within card

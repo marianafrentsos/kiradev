@@ -9,8 +9,11 @@ body {
 $base-font: Montserrat, sans-serif;
 $base-color: #cdcac0;
 $color-black: #000;
+$color-light-black: #242323;
+$color-white: #fff;
 $svg-color: #dea80f;
 $brand: ".kira-";
+$section-padding: 2rem;
 
 $mq-breakpoints: (
         mobile:  320px,
@@ -52,7 +55,7 @@ $mq-show-breakpoints: (mobile, mobileLandscape, tablet, desktop, wide);
 @import '~sass-mq';
 
 
-@mixin on-circle($item-count, $circle-size, $item-size) {
+@mixin kira-on-circle($item-count, $circle-size, $item-size) {
   list-style: none;
 
   > * {
@@ -209,6 +212,6 @@ a:visited {
   outline: 0;
 }
 
-.hide {
+#{$brand}hide {
   display: none;
 }

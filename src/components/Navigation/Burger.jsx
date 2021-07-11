@@ -1,62 +1,45 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import RightNav from './RightNav';
-import '../../variables/variables.scss'
+import '../../variables/global.scss'
 
-const StyledBurger = styled.div`
-  width: 2rem;
-  height: 2rem;
-  position: fixed;
-  top: 1.2rem;
-  right: 2rem;
-  z-index: 20;
-  display: none;
-  
-  @media (max-width: 768px), (max-width: 1024px) {
-    display: flex;
-    justify-content: space-around;
-    flex-flow: column nowrap;
-  }
-  
-  @media (min-width: 768px) {
-  //top: 2.9rem;
-  }
-  
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: ${({ open }) => open ? '#ccc' : '#cdcac0'};
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: all 0.3s linear;
-    
-    &:nth-child(1) {
-      transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
-    }
-    &:nth-child(2) {
-      transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
-      opacity: ${({ open }) => open ? 0 : 1};
-    }
-    &:nth-child(3) {
-      transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-    }
-  }
-`;
-
-
+import { useSpring, animated } from "react-spring";
 
 const Burger = () => {
-    const [open, setOpen] = useState(false)
-    return (
-        <>
-            <StyledBurger open={open} onClick={() => setOpen(!open)}>
-                <div />
-                <div />
-                <div />
-            </StyledBurger>
-            <RightNav open={open}/>
-        </>
-    )
-}
+    const [isOpen, toggle] = useState(true);
 
-export default Burger
+    const first = useSpring({
+        transform: isOpen
+            ? "translate(2px, 7px) rotate(0deg)"
+            : "translate(5px, 32px) rotate(-45deg)"
+    });
+    const second = useSpring({
+        transform: isOpen
+            ? "translate(2px, 19px) rotate(0deg)"
+            : "translate(10px, 4px) rotate(45deg)"
+    });
+    const third = useSpring({
+        transform: isOpen
+            ? "translate(2px, 31px) rotate(0deg)"
+            : "translate(5px, 32px) rotate(-45deg)"
+    });
+
+    return (
+        <div className="kira-burger" onClick={() => toggle(!isOpen)}>
+            <svg
+                onClick={() => toggle(!isOpen)}
+                width="40"
+                height="32"
+                viewBox="0 0 44 44"
+                fill="#fafafa"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <animated.rect width="40" height="4" rx="2" style={first} />
+                <animated.rect width="40" height="4" rx="2" style={second} />
+                <animated.rect width="40" height="4" rx="2" style={third} />
+            </svg>
+            <RightNav open={!isOpen}/>
+
+        </div>
+    );
+};
+export default Burger;

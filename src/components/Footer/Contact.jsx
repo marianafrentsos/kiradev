@@ -16,13 +16,12 @@ export default function Contact() {
     const [open, set] = useState(false)
 
     const springApi = useSpringRef()
-    const { width, size, ...rest } = useSpring({
+    const { width, height, ...rest } = useSpring({
         ref: springApi,
         config: config.stiff,
-        from: { size: '25%', background: '#F9A826', width: '35%'},
+        from: { background: '#F9A826', width: '35%'},
         to: {
-            size: open ? '100%' : '25%',
-            width: open ? '100%' : '35%',
+            width: open ? '100%' : '45%',
             background: open ? '#242323' : '#F9A826',
         },
     })
@@ -44,20 +43,20 @@ export default function Contact() {
     ])
 
     return (
-        <div className="contact-wrapper">
+        <div className="kira-contact-wrapper">
             <animated.div
-                style={{ ...rest, width: width, height: size}}
-                className="contact"
+                style={{ ...rest, width: width}}
+                className="kira-contact"
                 onClick={() => set(open => !open)}>
                 {transition((style, item) => (
                     <animated.div
-                        className="contact-btn"
+                        className="kira-contact-btn"
                         style={{ ...style, background: item.css }}>
-                        <animated.a className="contact-btn--icon" href={item.target} target="_blank">{item.contactIcon}
+                        <animated.a className="kira-contact-btn--icon" href={item.target} target="_blank">{item.contactIcon}
                         </animated.a>
                     </animated.div>
                 ))}
-                <p className={!open ? "contact-title" : "hide"}>Get in touch</p>
+                <p className={!open ? "kira-contact-title" : "kira-hide"}>Get in touch</p>
             </animated.div>
         </div>
     )

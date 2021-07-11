@@ -1,0 +1,55 @@
+@import '../../variables/variables.scss';
+
+@include mq($from: mobile) {
+  #{$brand} {
+    &skills-section {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      background-color: #cdcac0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 2rem;
+      height: 100%;
+
+      &__image-wrapper {
+        margin: 0 auto;
+        align-self: center;
+        padding-left: 0;
+        order: 2;
+        padding-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  #{$brand} {
+    &skills-section {
+      height: 65rem;
+      flex-direction: row;
+      padding: 5rem;
+      align-items: flex-start;
+
+      &__image-wrapper {
+        margin: 0 auto;
+        align-self: center;
+        max-width: 515px;
+        position: relative;
+        order: 0;
+      }
+    }
+  }
+}
+
+@include mq($from: wide) {
+  #{$brand} {
+    &skills-section {
+      &__image-wrapper {
+        max-width: 350px;
+      }
+    }
+  }
+}
