@@ -5,7 +5,7 @@ import {GiCampingTent, GiPaddles} from 'react-icons/gi';
 import { GiPopcorn } from 'react-icons/gi';
 import { BiWinkSmile } from "react-icons/bi";
 import Card from "../Card/Card";
-import './about.scss';
+import './About.scss';
 
 const About = () => {
     return (

@@ -1,28 +1,8 @@
 import React, {Component} from "react";
-import 'tachyons'
-
 import Navigation from "../Navigation/Navigation";
-import Video from "./Video/video";
-import Introduction from "./Introduction/Introduction";
-import styled from "styled-components";
-const StyledLanding = styled.div`
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  z-index:3;
-
-  
-  :after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,0.1); /* Black background with opacity */
-    z-index: 0;
-  }
-`
+import Introduction from "./Introduction";
+import '../../variables/global.scss'
+import Video from "./Video";
 
 
 class Landing extends Component {
@@ -54,15 +34,13 @@ class Landing extends Component {
 
         return (
             <>
-                <StyledLanding id='landing'>
+                <div className="kira-landing-section" id="landing">
                     <Navigation style={this.state.style} id='navigation'/>
                     <Video/>
                     <Introduction/>
-                </StyledLanding>
-            </>
+                </div>
+                </>
         )
-
-
     }
 }
 export default Landing;

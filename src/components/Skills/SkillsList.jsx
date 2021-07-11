@@ -14,7 +14,7 @@ import React from "react";
 const SkillsList = () => {
     return (
         <>
-            <ul className='circle-container'>
+            <ul className='kira-circle-container'>
                 <li><SiWebstorm/><span>webstorm</span></li>
                 <li><FaGithubSquare/><span>Git</span></li>
                 <li><SiCss3/><span>Css3</span></li>

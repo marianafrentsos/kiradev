@@ -1,0 +1,27 @@
+@import '../../variables/variables.scss';
+
+@include mq($from: mobile) {
+ #{$brand} {
+   &navigation {
+     position: fixed;
+     display: flex;
+     width: 100%;
+     z-index: 3;
+     height: 4rem;
+     padding: 0;
+
+     #{$brand}logo {
+       width: 8.5rem;
+     }
+   }
+ }
+}
+
+@include mq($from: desktop) {
+  #{$brand} {
+    &navigation {
+      padding-right: 4rem;
+      padding-left: 4rem;
+    }
+  }
+}

@@ -1,46 +1,8 @@
 import React, {Component} from "react";
 import 'tachyons';
 import Burger from "./Burger";
-import styled from "styled-components";
-
-
-const StyledAnchor = styled.a `
-    width: 65%;
-    letter-spacing: 0.2rem;
-    text-decoration: none;
-    font-size: 1.8rem;
-    color: #cdcac0;
-    font-weight: 500;
-    margin: 0;
-    padding: 1.2rem 1.4rem;
-    line-height: 1.5rem;
-
-  @media (max-width: 768px) and (min-width: 768px) {
-    font-size: 1.9rem;
-    padding-left: 2rem;
-  }
-
-  @media (min-width: 1025px){
-    font-size: 2.5rem;
-  }
-`
-
-const StyledNav = styled.div `
-  position: fixed;
-  display: flex;
-  width: 100%;
-  z-index: 3;
-  height: 4rem;
-
-  @media (max-width: 768px), (min-width: 768px) {
-    padding: 0;
-  }
-
-  @media (min-width: 1025px){
-    padding-right: 4rem;
-    padding-left: 4rem;
-  }
-`
+import logo from "../../assets/kira.svg";
+import '../../variables/global.scss'
 
 class Navigation extends Component {
     navBackground;
@@ -74,29 +36,14 @@ class Navigation extends Component {
 
     render() {
         return (
-        <> <StyledNav id={'navigation'} style={this.state.style}>
-            <StyledAnchor href="/" title="Kira">
-                Kira
-            </StyledAnchor>
-            <Burger/>
-        </StyledNav>
+        <>
+            <div id={'navigation'} style={this.state.style} className="kira-navigation">
+                <div className="kira-logo"><a><img src={logo}/></a></div>
+                <Burger/>
+            </div>
         </>
 
-    )
+        )
     }
-
-    }
-
-// const Navigation = () => {
-//     return (
-//         <> <StyledNav id={'navigation'}>
-//             <StyledAnchor href="/" title="Kira">
-//                 Kira
-//             </StyledAnchor>
-//             <Burger/>
-//         </StyledNav>
-//         </>
-//
-//     )
-// }
+}
 export default Navigation;

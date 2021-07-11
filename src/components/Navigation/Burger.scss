@@ -1,0 +1,33 @@
+@import 'src/variables/variables';
+
+@include mq($from: mobile) {
+  #{$brand} {
+    &burger {
+      width: 2rem;
+      height: 2rem;
+      position: fixed;
+      top: 1.2rem;
+      right: 2rem;
+      z-index: 4;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+
+      svg {
+        z-index: 20;
+      }
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  #{$brand} {
+    &burger {
+      //flex-flow: row;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+}

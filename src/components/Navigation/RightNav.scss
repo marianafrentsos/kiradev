@@ -1,0 +1,48 @@
+@import '../../variables/variables.scss';
+
+@include mq($from: mobile) {
+  #{$brand}{
+    &right-navigation{
+      list-style: none;
+      display: flex;
+      flex-flow: column nowrap;
+      position: fixed;
+      margin: 0;
+      justify-content: flex-start;
+      background-color: $color-black;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      padding-top: calc(50% - 1rem);
+      transition: all 0.1s;
+
+      li {
+        margin: 1.2rem 1.4rem;
+        padding-bottom: 2.2rem;
+        font-size: 1.5rem;
+        color: $base-color;
+        text-align: center;
+        transition: ease 1s;
+        border-bottom: 2px solid transparent;
+      }
+
+      li:hover {
+        cursor: pointer;
+        border-bottom-color: #21A2AC;
+        transition: border-bottom-color 2s ease-out;
+      }
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  #{$brand}{
+    &right-navigation{
+      position: unset;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      width: 35%;
+    }
+  }
+}
