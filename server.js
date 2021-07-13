@@ -1,7 +1,8 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const publicPath = path.join(__dirname, '..', 'build');
+const publicPath = path.join(__dirname, '.', 'build');
+const port = 5000;
 
 app.use(express.static(publicPath));
 app.get('*', (req, res) => {
@@ -9,6 +10,6 @@ app.get('*', (req, res) => {
 });
 
 app.listen(5000, () => {
-    console.log(__dirname);
+    console.log(__dirname)
     console.log("server is up");
 });
