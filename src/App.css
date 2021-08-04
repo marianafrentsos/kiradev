@@ -11,7 +11,7 @@ body {
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-name: slideInFromBottom;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Montserrat, monospace;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
@@ -20,10 +20,20 @@ body {
 }
 
 .try-static{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Montserrat, monospace;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     transform: translateY(-50%);
     color: white;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    background: #cdcac0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: black;
+
 }
