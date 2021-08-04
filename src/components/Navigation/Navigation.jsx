@@ -13,7 +13,7 @@ class Navigation extends Component {
 
         this.state = {
             style: this.style,
-            isDisplayed: true,
+            displayLogo: true,
         }
 
         this.handleScroll = this.handleScroll.bind(this);
@@ -38,20 +38,20 @@ class Navigation extends Component {
     }
 
     toggleLogo = () => {
-        this.setState(state => ({ isDisplayed: !state.isDisplayed }));
+        this.setState(state => ({ displayLogo: !state.displayLogo }));
     };
 
     render() {
         return (
         <>
             <div id={'navigation'} style={this.state.style} className="kira-navigation">
-                {this.state.isDisplayed ?
+                {this.state.displayLogo ?
                 <div className="kira-logo"><Link to="home"
                                                  spy={true}
                                                  smooth={true}
                                                  offset={50}
                                                  duration={500}><img src={logo} alt={"logo"}/></Link></div> : null }
-                <Burger isDisplayed={this.toggleLogo}/>
+                <Burger displayLogo={this.toggleLogo}/>
             </div>
         </>
 

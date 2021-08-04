@@ -4,12 +4,17 @@ import '../../variables/global.scss'
 
 import { useSpring, animated } from "react-spring";
 
-const Burger = ({isDisplayed}) => {
+const Burger = ({displayLogo}) => {
     const [isOpen, toggle] = useState(true);
 
     const handleOpenMenu = () => {
         toggle(!isOpen)
     }
+
+    const handleLogo = () => {
+        displayLogo();
+    }
+
 
     const first = useSpring({
         transform: isOpen
@@ -28,7 +33,7 @@ const Burger = ({isDisplayed}) => {
     });
 
     return (
-        <div className="kira-burger" onClick={() => {toggle(!isOpen); isDisplayed()}}>
+        <div className="kira-burger" onClick={() => {toggle(!isOpen); displayLogo()}}>
             <svg
                 onClick={handleOpenMenu}
                 width="40"
@@ -41,7 +46,7 @@ const Burger = ({isDisplayed}) => {
                 <animated.rect width="40" height="4" rx="2" style={second} />
                 <animated.rect width="40" height="4" rx="2" style={third} />
             </svg>
-            <RightNav open={!isOpen} handleClick={handleOpenMenu}/>
+            <RightNav open={!isOpen} handleClick={handleOpenMenu} handleLogo={handleLogo}/>
         </div>
     );
 };

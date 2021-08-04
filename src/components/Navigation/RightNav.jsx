@@ -4,7 +4,7 @@ import {useSpring, animated} from "react-spring";
 import { Link } from 'react-scroll'
 import logo from "../../assets/kira.svg";
 
-const RightNav = ({ open, handleClick }) => {
+const RightNav = ({ open, handleClick, handleLogo }) => {
 
      let style = useSpring({
             transform: open
@@ -15,7 +15,6 @@ const RightNav = ({ open, handleClick }) => {
     if(window.innerWidth >= 1025) {
          style = null;
     }
-
     const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -40,52 +39,58 @@ const RightNav = ({ open, handleClick }) => {
             <animated.ul open={open} className="kira-right-navigation"
                      style={style}>
             <Link
+                open={open}
                 activeClass="active"
                 to="home"
                 spy={true}
                 smooth={true}
                 duration={500}
                 className="kira-right-navigation__item"
-                onClick = {handleClick}
+                onClick = {() => {handleClick(); handleLogo()}}
             >Home</Link>
             <Link
+                open={open}
                 activeClass="active"
                 to="about"
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick = {handleClick}
+                onClick = {() => {handleClick(); handleLogo()}}
                 className="kira-right-navigation__item">About</Link>
             <Link
+                open={open}
                 activeClass="active"
                 to="skills"
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick = {handleClick}
+                onClick = {() => {handleClick(); handleLogo()}}
                 className="kira-right-navigation__item">Skills
             </Link>
             <Link
+                open={open}
                 activeClass="active"
                 to="contact"
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick = {handleClick}
+                onClick = {() => {handleClick(); handleLogo()}}
                 className="kira-right-navigation__item">Contact</Link>
 
+                { open ?
             <animated.div open={open} style={style} className="kira-right-logo">
                 <Link activeClass="active"
+                      open={open}
                       to="home"
                       spy={true}
                       smooth={true}
                       duration={500}
-                      onClick = {handleClick}
+                      onClick = {() => {handleClick(); handleLogo()}}
                 ><img src={logo}/></Link>
-            </animated.div>
+            </animated.div> : null }
         </animated.ul>
         </>
     )
 }
 
-export default RightNav
+export default RightNav;
