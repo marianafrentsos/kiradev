@@ -23,8 +23,6 @@
 @include mq($from: desktop) {
   #{$brand} {
     &burger {
-      //flex-flow: row;
-
       svg {
         display: none;
       }

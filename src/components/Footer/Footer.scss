@@ -3,23 +3,32 @@
 @include mq($from: mobile) {
   #{$brand}{
     &footer-section {
-      height: 30rem;
+      height: 20rem;
       width: 100%;
       background-color: $color-light-black;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
       flex-direction: column;
-      flex: 1 1 auto;
+      padding: 2rem;
 
       &__end {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-end;
         align-content: center;
         align-items: center;
+        height: 100%;
+        position: relative;
+        top: 0;
+
 
         &-logo {
           max-width: 30%;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
       }
 
@@ -51,6 +60,8 @@
 @include mq($from: desktop ) {
   #{$brand} {
     &footer-section {
+      padding: 5.5rem;
+
       &#{$brand}card {
         height: 60%;
         width: 30%;
@@ -60,6 +71,11 @@
         grid-template-columns: repeat(2, minmax(100px, 1fr));
         padding: 25px;
       }
+
+      &__end {
+        top: 70px;
+
       }
     }
   }
+}

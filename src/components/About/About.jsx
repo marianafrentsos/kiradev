@@ -16,14 +16,14 @@ const About = () => {
                     <p>When I am not coding or just trying to solve a problem, you can find me: </p>
                     <ul className="kira-about-section__activities-list">
                         <li><FaHiking/> hiking</li>
-                        <li><GiPaddles/> kayaking</li>
+                        <li><GiPaddles/> skiing</li>
                         <li><GiPopcorn/> watching movies</li>
                         <li><BiWinkSmile/> spending time with my family</li>
                         <li><GiCampingTent/>Camping</li>
                     </ul>
                 </div>
                 <Card>
-                    <img src={about}/>
+                    <img src={about} style={{'width': '100%'}} alt={"image"}/>
                 </Card>
             </div>
         </>

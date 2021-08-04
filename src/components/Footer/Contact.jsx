@@ -21,7 +21,7 @@ export default function Contact() {
         config: config.stiff,
         from: { background: '#F9A826', width: '35%'},
         to: {
-            width: open ? '100%' : '45%',
+            width: open ? '100%' : '35%',
             background: open ? '#242323' : '#F9A826',
         },
     })
@@ -43,7 +43,7 @@ export default function Contact() {
     ])
 
     return (
-        <div className="kira-contact-wrapper">
+        <div className="kira-contact-wrapper" id="contact">
             <animated.div
                 style={{ ...rest, width: width}}
                 className="kira-contact"

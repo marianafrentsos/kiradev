@@ -34,7 +34,7 @@ class Landing extends Component {
 
         return (
             <>
-                <div className="kira-landing-section" id="landing">
+                <div className="kira-landing-section" id="home">
                     <Navigation style={this.state.style} id='navigation'/>
                     <Video/>
                     <Introduction/>

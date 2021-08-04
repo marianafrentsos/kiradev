@@ -12,10 +12,10 @@ const Presentation = () => {
                 </p>
                 <h5>What I do</h5>
                 <ul>
-                    <li><span>&#123;</span>Develop interactive websites<span>&#125;</span></li>
-                    <li><span>&#123;</span>Use the latest technologies<span>&#125;</span></li>
-                    <li><span>&#123;</span>Build an application form start to end <span>&#125;</span></li>
-                    <li><span>&#123;</span>Have fun <BiWinkSmile/><span>&#125;</span></li>
+                    <li><span>&#128073;</span><span>Develop interactive websites</span></li>
+                    <li><span>&#128073;</span><span>Use the latest technologies</span></li>
+                    <li><span>&#128073;</span><span>Build applications from start to finish</span></li>
+                    <li><span>&#128073;</span><span>Have fun <BiWinkSmile/></span></li>
                 </ul>
             </div>
         </>

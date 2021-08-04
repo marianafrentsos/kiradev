@@ -1,8 +1,9 @@
 import React, {Component} from "react";
-import 'tachyons';
 import Burger from "./Burger";
 import logo from "../../assets/kira.svg";
 import '../../variables/global.scss'
+import { Link } from 'react-scroll'
+
 
 class Navigation extends Component {
     navBackground;
@@ -11,10 +12,12 @@ class Navigation extends Component {
         super(props)
 
         this.state = {
-            style: this.style
+            style: this.style,
+            isDisplayed: true,
         }
 
         this.handleScroll = this.handleScroll.bind(this);
+        this.toggleLogo = this.toggleLogo.bind(this);
     }
 
     componentDidMount() {
@@ -34,12 +37,21 @@ class Navigation extends Component {
         });
     }
 
+    toggleLogo = () => {
+        this.setState(state => ({ isDisplayed: !state.isDisplayed }));
+    };
+
     render() {
         return (
         <>
             <div id={'navigation'} style={this.state.style} className="kira-navigation">
-                <div className="kira-logo"><a><img src={logo}/></a></div>
-                <Burger/>
+                {this.state.isDisplayed ?
+                <div className="kira-logo"><Link to="home"
+                                                 spy={true}
+                                                 smooth={true}
+                                                 offset={50}
+                                                 duration={500}><img src={logo} alt={"logo"}/></Link></div> : null }
+                <Burger isDisplayed={this.toggleLogo}/>
             </div>
         </>
 

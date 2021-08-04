@@ -12,6 +12,11 @@
 
      #{$brand}logo {
        width: 8.5rem;
+
+       img {
+        width: 100%;
+        height: 100%;
+       }
      }
    }
  }

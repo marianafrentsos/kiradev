@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import RightNav from './RightNav';
 import '../../variables/global.scss'
 
 import { useSpring, animated } from "react-spring";
 
-const Burger = () => {
+const Burger = ({isDisplayed}) => {
     const [isOpen, toggle] = useState(true);
+
+    const handleOpenMenu = () => {
+        toggle(!isOpen)
+    }
 
     const first = useSpring({
         transform: isOpen
@@ -24,9 +28,9 @@ const Burger = () => {
     });
 
     return (
-        <div className="kira-burger" onClick={() => toggle(!isOpen)}>
+        <div className="kira-burger" onClick={() => {toggle(!isOpen); isDisplayed()}}>
             <svg
-                onClick={() => toggle(!isOpen)}
+                onClick={handleOpenMenu}
                 width="40"
                 height="32"
                 viewBox="0 0 44 44"
@@ -37,8 +41,7 @@ const Burger = () => {
                 <animated.rect width="40" height="4" rx="2" style={second} />
                 <animated.rect width="40" height="4" rx="2" style={third} />
             </svg>
-            <RightNav open={!isOpen}/>
-
+            <RightNav open={!isOpen} handleClick={handleOpenMenu}/>
         </div>
     );
 };
