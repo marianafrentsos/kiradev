@@ -4,7 +4,7 @@ import {useSpring, animated} from "react-spring";
 import { Link } from 'react-scroll'
 import logo from "../../assets/kira.svg";
 
-const RightNav = ({ open, handleClick, handleLogo }) => {
+const RightNav = ({ open, handleClick}) => {
 
      let style = useSpring({
             transform: open
@@ -46,8 +46,7 @@ const RightNav = ({ open, handleClick, handleLogo }) => {
                 smooth={true}
                 duration={500}
                 className="kira-right-navigation__item"
-                onClick = {() => {handleClick(); handleLogo()}}
-            >Home</Link>
+                onClick = {() => {handleClick()}}>Home</Link>
             <Link
                 open={open}
                 activeClass="active"
@@ -55,7 +54,7 @@ const RightNav = ({ open, handleClick, handleLogo }) => {
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick = {() => {handleClick(); handleLogo()}}
+                onClick = {() => {handleClick()}}
                 className="kira-right-navigation__item">About</Link>
             <Link
                 open={open}
@@ -64,7 +63,7 @@ const RightNav = ({ open, handleClick, handleLogo }) => {
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick = {() => {handleClick(); handleLogo()}}
+                onClick = {() => {handleClick()}}
                 className="kira-right-navigation__item">Skills
             </Link>
             <Link
@@ -74,7 +73,7 @@ const RightNav = ({ open, handleClick, handleLogo }) => {
                 spy={true}
                 smooth={true}
                 duration={500}
-                onClick = {() => {handleClick(); handleLogo()}}
+                onClick = {() => {handleClick()}}
                 className="kira-right-navigation__item">Contact</Link>
 
                 { open ?
@@ -85,7 +84,7 @@ const RightNav = ({ open, handleClick, handleLogo }) => {
                       spy={true}
                       smooth={true}
                       duration={500}
-                      onClick = {() => {handleClick(); handleLogo()}}
+                      onClick = {() => {handleClick()}}
                 ><img src={logo}/></Link>
             </animated.div> : null }
         </animated.ul>
