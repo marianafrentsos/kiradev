@@ -66,7 +66,16 @@ const RightNav = ({ open, handleClick}) => {
                 onClick = {() => {handleClick()}}
                 className="kira-right-navigation__item">Skills
             </Link>
-            <Link
+                <Link
+                    open={open}
+                    activeClass="active"
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    onClick = {() => {handleClick()}}
+                    className="kira-right-navigation__item">Projects</Link>
+                <Link
                 open={open}
                 activeClass="active"
                 to="contact"

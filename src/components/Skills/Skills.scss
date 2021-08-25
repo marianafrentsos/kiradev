@@ -11,7 +11,7 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 2rem;
+      padding: 3rem 2rem;
       height: 100%;
 
       &__image-wrapper {
@@ -33,7 +33,7 @@
 @include mq($from: desktop) {
   #{$brand} {
     &skills-section {
-      height: 65rem;
+      height: 85rem;
       flex-direction: row;
       padding: 5rem;
       align-items: flex-start;

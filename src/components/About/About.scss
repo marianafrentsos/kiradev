@@ -50,6 +50,17 @@
         }
       }
     }
+
+    &curve-down{
+      display: block;
+      position: absolute;
+      z-index: 2;
+      filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+
+      & path {
+        fill: $color-black;
+      }
+    }
   }
 }
 
@@ -58,7 +69,8 @@
     &about-section {
       flex-direction: row;
       padding: 5rem;
-      height: 50rem;
+      height: 65rem;
+      background: $color-black;
 
       #{$brand}card {
         height: 100%;
@@ -91,6 +103,10 @@
           }
         }
       }
+    }
+
+    &curve-down {
+      height: 150px;
     }
   }
 }

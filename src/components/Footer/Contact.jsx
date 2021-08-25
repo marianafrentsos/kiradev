@@ -7,9 +7,6 @@ import {
     animated,
     useSpringRef,
 } from '@react-spring/web'
-import {isMobile} from 'react-device-detect';
-
-
 import data from '../../data/data';
 
 export default function Contact() {
