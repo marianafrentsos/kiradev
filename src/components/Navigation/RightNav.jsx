@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import '../../variables/global.scss'
-import {useSpring, animated} from "react-spring";
+import {useSpring, animated} from '@react-spring/web';
 import { Link } from 'react-scroll'
 import logo from "../../assets/kira.svg";
 
@@ -38,63 +38,76 @@ const RightNav = ({ open, handleClick}) => {
         <>
             <animated.ul open={open} className="kira-right-navigation"
                      style={style}>
-            <Link
-                open={open}
-                activeClass="active"
-                to="home"
-                spy={true}
-                smooth={true}
-                duration={500}
-                className="kira-right-navigation__item"
-                onClick = {() => {handleClick()}}>Home</Link>
-            <Link
-                open={open}
-                activeClass="active"
-                to="about"
-                spy={true}
-                smooth={true}
-                duration={500}
-                onClick = {() => {handleClick()}}
-                className="kira-right-navigation__item">About</Link>
-            <Link
-                open={open}
-                activeClass="active"
-                to="skills"
-                spy={true}
-                smooth={true}
-                duration={500}
-                onClick = {() => {handleClick()}}
-                className="kira-right-navigation__item">Skills
-            </Link>
+                <li className="kira-right-navigation__item">
+                    <Link
+                        open={open}
+                        activeClass="active"
+                        to="home"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        onClick = {() => {handleClick()}}>Home</Link>
+                </li>
+            <li className="kira-right-navigation__item">
                 <Link
                     open={open}
                     activeClass="active"
-                    to="projects"
+                    to="about"
                     spy={true}
                     smooth={true}
                     duration={500}
                     onClick = {() => {handleClick()}}
-                    className="kira-right-navigation__item">Projects</Link>
-                <Link
-                open={open}
-                activeClass="active"
-                to="contact"
-                spy={true}
-                smooth={true}
-                duration={500}
-                onClick = {() => {handleClick()}}
-                className="kira-right-navigation__item">Contact</Link>
+                    >About</Link>
+            </li>
+           <li className="kira-right-navigation__item">
+               <Link
+                   open={open}
+                   activeClass="active"
+                   to="skills"
+                   spy={true}
+                   smooth={true}
+                   duration={500}
+                   onClick = {() => {handleClick()}}
+                   >Skills
+               </Link>
+           </li>
+                <li  className="kira-right-navigation__item">
+                    <Link
+                        open={open}
+                        activeClass="active"
+                        to="projects"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        onClick = {() => {handleClick()}}
+                       >Projects</Link>
+                </li>
+               <li className="kira-right-navigation__item">
+                   <Link
+                       open={open}
+                       activeClass="active"
+                       to="footer"
+                       spy={true}
+                       smooth={true}
+                       duration={500}
+                       offsite={100}
+                       onClick = {() => {handleClick()}}
+                      >Contact</Link>
+               </li>
 
                 { open ?
             <animated.div open={open} style={style} className="kira-right-logo">
-                <Link activeClass="active"
-                      open={open}
-                      to="home"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      onClick = {() => {handleClick()}}
-                ><img src={logo}/></Link>
+                <li>
+                    <Link
+                          open={open}
+                          to="home"
+                          spy={true}
+                          smooth={true}
+                          duration={500}
+                          onClick = {() => {handleClick()}}
+                    ><img src={logo}/></Link>
+                </li>
+
             </animated.div> : null }
         </animated.ul>
         </>

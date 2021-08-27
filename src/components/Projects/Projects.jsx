@@ -1,7 +1,7 @@
 import '../../variables/global.scss';
 
-import React, {useRef, useEffect, useState} from "react";
-import {useTransition, animated, useSpring, useSpringRef, config, useChain } from '@react-spring/web'
+import React, {useState} from "react";
+import {useTransition, animated, useSpring, useSpringRef,useChain } from '@react-spring/web'
 
 import data from "../../data/projects";
 
@@ -15,10 +15,10 @@ export default function Projects() {
     const animatedBannerRef = useSpringRef();
     const animatedBannerProps = useSpring({
         ref: animatedBannerRef,
-        height: clicked ? "50px" : vhToPixel(100),
+        height: clicked ? "50px" : vhToPixel(50),
         justifyContent: clicked ? "flex-start" : "center",
         from: {
-            height: vhToPixel(100),
+            height: vhToPixel(50),
         },
     });
 
@@ -26,11 +26,11 @@ export default function Projects() {
     const titleProps = useSpring({
         ref: titleRef,
         opacity: clicked ? 0.4 : 1,
-        transform: clicked ? "translateY(-50%)" : "translateY(0%)",
+        transform: clicked ? "translateY(-300%)" : "translateY(0%)",
         transformOrigin: "0 0",
         from: {
             opacity: 1,
-            transform: "translateY(-100%)",
+            transform: "translateY(-300%)",
         },
     });
 const subTitleRef = useSpringRef();
@@ -79,12 +79,12 @@ const subTitleRef = useSpringRef();
     useChain(
         clicked
             ? [animatedBannerRef, animatedItemsRef, animatedCurveRef, titleRef, subTitleRef ]
-            : [animatedBannerRef, titleRef, animatedCurveRef, subTitleRef, animatedItemsRef ],
+            : [animatedItemsRef, animatedCurveRef,  animatedBannerRef, titleRef, subTitleRef],
         [0, 0.5]
     );
 
     title = 'Check out my work'
-    subTitle = 'My projects - section under construction :)'
+    subTitle = 'Selected projects - section under construction :)'
 
     return (
         <>
@@ -125,6 +125,11 @@ const subTitleRef = useSpringRef();
                         ))}
                     </animated.div>
                 </animated.div>
+                <svg className="kira-projects-section__divider" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <path id="slitPath2" d="M50 100 C49 80 47 0 0 0 L47 0 Z"></path>
+                    <path id="slitPath3" d="M50 100 C51 80 53 0 100 0 L53 0 Z"></path>
+                    <path id="slitPath1" d="M47 0 L50 100 L53 0 Z"></path>
+                </svg>
             </div>
         </>
     );

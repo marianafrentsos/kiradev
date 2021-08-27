@@ -10,7 +10,7 @@ const Footer = () => {
         <>
             <div className="kira-footer-section" id="footer">
                 {cards.map((card, i) => (
-                    <Card>
+                    <Card key={i}>
                         <Contact/>
                     </Card>
                 ))}
@@ -24,26 +24,6 @@ const Footer = () => {
 }
 
 export default Footer;
-
-
-function Image({ ratio, src }) {
-    return (
-        <div className="image-container">
-            <div className="image-inner-container">
-                <div
-                    className="ratio"
-                    style={{
-                        paddingTop: ratio * 100 + '%'
-                    }}
-                >
-                    <div className="ratio-inner">
-                        <img src={src} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-}
 
 const cards = [
     {

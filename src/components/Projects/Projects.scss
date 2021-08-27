@@ -5,9 +5,30 @@
     &projects-section {
       width: 100%;
       position: relative;
-      //height: 100vh;
+      height: 100vh;
       background-color: $color-light-black;
       //min-height: 100vh;
+
+      &__divider {
+        position: absolute;
+        bottom: -100px;
+        #slitPath3
+        {
+          fill: $color-light-black;
+          stroke: $base-color;
+          stroke-width: 0;
+        }
+
+        #slitPath2,
+        #slitPath3 {
+          fill: $color-light-black;
+        }
+
+        #slitPath1 {
+          fill: $theme-color;
+        }
+      }
+
     }
 
     &curve-up {

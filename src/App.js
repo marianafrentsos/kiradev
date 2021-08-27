@@ -1,11 +1,11 @@
 import './App.css';
 import './variables/variables.scss'
 import React from "react";
-import Landing from './components/Landing/Landing'
+import Landing from "./components/Landing/Landing";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
-import Footer from "./components/Footer/Footer";
 import Projects from "./components/Projects/Projects";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
         <Landing/>
         <About/>
         <Skills/>
-          <Projects/>
-          <Footer/>
+        <Projects/>
+        <Footer/>
       </>
   );
 }
