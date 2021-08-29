@@ -7,13 +7,13 @@
       position: relative;
       height: 100vh;
       background-color: $color-light-black;
-      //min-height: 100vh;
 
       &__divider {
         position: absolute;
-        bottom: -100px;
-        #slitPath3
-        {
+        height: 51px;
+        bottom: -50px;
+
+        #slitPath3 {
           fill: $color-light-black;
           stroke: $base-color;
           stroke-width: 0;
@@ -23,12 +23,11 @@
         #slitPath3 {
           fill: $color-light-black;
         }
-
         #slitPath1 {
-          fill: $theme-color;
+          fill: $color-light-black;
+          stroke-width: 0;
         }
       }
-
     }
 
     &curve-up {
@@ -86,11 +85,30 @@
   }
 }
 
+@include mq($from: tablet) {
+  #{$brand} {
+    &projects-section {
+      &__divider {
+        height: 101px;
+        bottom: -100px;
+      }
+    }
+  }
+}
+
 @include mq($from: desktop) {
   #{$brand} {
     &curve-up {
       top: -150px;
       height: 150px;
+    }
+
+    &projects-section {
+      &__divider {
+        #slitPath1 {
+          fill: $theme-color;
+        }
+      }
     }
   }
 }

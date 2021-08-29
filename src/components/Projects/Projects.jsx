@@ -15,10 +15,10 @@ export default function Projects() {
     const animatedBannerRef = useSpringRef();
     const animatedBannerProps = useSpring({
         ref: animatedBannerRef,
-        height: clicked ? "50px" : vhToPixel(50),
+        height: clicked ? "50px" : vhToPixel(100),
         justifyContent: clicked ? "flex-start" : "center",
         from: {
-            height: vhToPixel(50),
+            height: vhToPixel(100),
         },
     });
 
