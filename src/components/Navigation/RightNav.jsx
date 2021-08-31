@@ -79,7 +79,7 @@ const RightNav = ({ open, handleClick}) => {
                         spy={true}
                         smooth={true}
                         duration={500}
-                        offsite={-150}
+                        offsite={-200}
                         onClick = {() => {handleClick()}}
                        >Projects</Link>
                 </li>

@@ -28,7 +28,11 @@
         z-index: 2;
         padding: 2rem;
         position: relative;
-        top: 4rem;
+        top: 2rem;
+        -webkit-box-shadow: 7px 8px 13px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 7px 8px 13px 0px rgba(0,0,0,0.75);
+        box-shadow: 7px 8px 13px 0px rgba(0,0,0,0.75);
+        border-radius: 5px;
       }
 
       &-title {
@@ -63,7 +67,8 @@
   #{$brand} {
     &contact {
       &-wrapper {
-        padding: 10rem;
+        padding: 6rem;
+        top: 2rem;
       }
     }
   }
@@ -73,6 +78,10 @@
   #{$brand} {
     &contact {
       position: relative;
+
+      &-wrapper {
+        top: 4rem;
+      }
     }
   }
 }
