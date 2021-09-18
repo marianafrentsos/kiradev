@@ -76,7 +76,7 @@ export default function Projects() {
         [0, 0.5]
     );
 
-    title = 'Check out my work'
+    title = 'Click to check out my work'
     subTitle = 'Selected projects'
 
     return (

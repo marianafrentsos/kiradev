@@ -16,7 +16,7 @@ const Footer = () => {
                 ))}
                 <div className="kira-footer-section__end">
                     <p>Made with 💞️ by </p>
-                    <div className="kira-footer-section__end-logo"><img src={logo}/></div>
+                    <div className="kira-footer-section__end-logo"><img src={logo} alt="logo image"/></div>
                 </div>
             </div>
         </>
