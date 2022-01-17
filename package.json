@@ -47,8 +47,6 @@
     ]
   },
   "devDependencies": {
-    "@react-spring/web": "^9.2.4",
-    "favicons-webpack-plugin": "^5.0.2",
-    "webpack-pwa-manifest": "^4.3.0"
+    "@react-spring/web": "^9.2.4"
   }
 }
