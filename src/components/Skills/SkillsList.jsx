@@ -5,12 +5,10 @@ import {
     SiCss3,
     SiHtml5,
     SiJavascript,
-    SiReact, SiStyledComponents,
-    SiWebstorm
+    SiReact, SiStyledcomponents,
+    SiWebstorm,
 } from "react-icons/all";
 import React from "react";
-
-
 const SkillsList = () => {
     return (
         <>
@@ -24,7 +22,7 @@ const SkillsList = () => {
                 <li><SiAngular/><span>Angular</span></li>
                 <li><SiBootstrap/><span>Bootstrap</span></li>
                 <li><FaNode/><span>NodeJs</span></li>
-                <li><SiStyledComponents/><span>Styled Components</span></li>
+                <li><SiStyledcomponents/><span>Styled Components</span></li>
             </ul>
         </>
     )

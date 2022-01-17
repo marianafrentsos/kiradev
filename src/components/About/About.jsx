@@ -12,7 +12,7 @@ const About = () => {
         <>
             <div className="kira-about-section" id="about">
                 <div className="kira-about-section__text">
-                    <h5>Just me...</h5>
+                    <h5>A little about me...</h5>
                     <p>When I am not coding or just trying to solve a problem, you can find me: </p>
                     <ul className="kira-about-section__activities-list">
                         <li><FaHiking/> <span>hiking</span></li>
