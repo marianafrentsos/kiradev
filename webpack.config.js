@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: "development",
@@ -47,7 +48,7 @@ module.exports = {
             },
             {
                 test: /react-icons\/(.)*(.js)$/,
-                loader: 'babel',
+                loader: 'babel-loader',
             },
 
             {
@@ -81,17 +82,18 @@ module.exports = {
         filename: 'bundle.js',
     },
     devServer: {
-        static: {
-            directory: path.join(__dirname, 'public'),
-        },
         compress: true,
         port: 3010,
+        historyApiFallback: true,
+        open: true
+
     },
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, "public", "index.html"),
         favicon: "./public/favicon.ico",
         filename: "index.html",
         manifest: "./public/manifest.json",
-    })
-    ],
+    }),
+        new CleanWebpackPlugin(),
+    ]
 };
