@@ -22,6 +22,10 @@ class Navigation extends Component {
         window.addEventListener('scroll', this.handleScroll);
     };
 
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    }
+
     handleScroll() {
 
         if(window.pageYOffset > 100 ){

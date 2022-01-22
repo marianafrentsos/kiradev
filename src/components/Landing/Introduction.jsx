@@ -4,8 +4,8 @@ import {animated, useSprings, useSpring} from "@react-spring/web";
 import IntroductionText from "./IntroductionText";
 
 const Introduction = () => {
+    let [phase, setPhase] = useState(false);
 
-    let [phase, setPhase] = useState();
     const text = [...'Hi, I am Kira.'];
     const from = { transform: 'translateY(50px)', opacity: 0 }
     const to = { transform: 'translateY(10px)', opacity: 1 }
@@ -43,4 +43,4 @@ const Introduction = () => {
     )
 }
 
-export default Introduction
+export default Introduction;
