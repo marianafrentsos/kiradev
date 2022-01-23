@@ -16,7 +16,7 @@ export default [
         id: 2,
         background: crwn,
         title: "Crwn Shop",
-        description: "This is a desktop e-commerce project developed while I was studying React.",
+        description: "This is an e-commerce project developed while I was studying React.",
         technologies: "Heroku, SCSS, React, Redux, Firebase",
         btnUrl: "https://my-crwn-shop.herokuapp.com/",
         gitUrl:"https://github.com/marianafrentsos/ClothingStore",
