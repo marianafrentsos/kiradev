@@ -1,10 +1,10 @@
 import '../../variables/global.scss';
 
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useTransition, animated, useSpring, useSpringRef, useChain} from '@react-spring/web'
 
 import data from "../../data/projects";
-import {FaGithubSquare} from "react-icons/all";
+import {FaGithubSquare} from "react-icons/fa";
 import {useInView} from "react-intersection-observer";
 
 export default function Projects() {
@@ -104,7 +104,7 @@ export default function Projects() {
                                 {item.btnUrl ?
                                 <animated.div className="kira-projects-grid__item-img">
                                     <a className="kira-projects-grid__item-overlay" href={item.btnUrl} target="_blank"/>
-                                    <img src={item.background}/>
+                                    <img src={item.background} alt={"web-projects-image"}/>
                                 </animated.div> : null}
                                 <animated.div className="kira-projects-grid__item-description">
                                     <div className="kira-projects-grid__item-description-body">
@@ -115,9 +115,9 @@ export default function Projects() {
                                             <span>{item.description}</span>
                                         </p>
                                         {item.technologies ?
-                                        <p className="kira-projects-grid__item-description-body-tech">
-                                            <span>Technologies: </span> <span>{item.technologies}</span>
-                                        </p> : null}
+                                        <div className="kira-projects-grid__item-description-body-tech-wrapper">
+                                            <p>Technologies:</p>  <div className="kira-projects-grid__item-description-body-tech-items">{item.technologies.map((technology, index) => <span key = {index} className="kira-projects-grid__item-description-body-tech-items-single">{technology}</span> )}</div>
+                                        </div> : null}
                                     </div>
                                     {item.btnUrl || item.gitUrl ?
                                     <div className="kira-projects-grid__item-description-btns">

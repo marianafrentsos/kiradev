@@ -4,27 +4,32 @@ import Introduction from "./Introduction";
 import '../../variables/global.scss'
 import Video from "./Video";
 
-
 class Landing extends Component {
 
     constructor(props){
 
     super(props)
         this.state = {
-        style: this.style
+        style: this.style,
+            mount: true
         }
 
         this.handleScroll = this.handleScroll.bind(this);
     }
 
     componentDidMount() {
+        this.state.mount = true;
         window.addEventListener('scroll', this.handleScroll);
+    };
+
+    componentWillUnmount() {
+        this.state.mount = false;
+        window.removeEventListener('scroll', this.handleScroll);
     };
 
     handleScroll(event) {
         let scrollTop = event.target.body.scrollTop,
             itemTranslate = {'backgroundColor': 'black'};
-            // itemTranslate = Math.min(0, scrollTop/3 - 60);
 
         this.setState({
             style: itemTranslate
@@ -35,9 +40,10 @@ class Landing extends Component {
         return (
             <>
                 <div className="kira-landing-section" id="home">
-                    <Navigation style={this.state.style} id='navigation'/>
+                     <Navigation style={this.state.style} id='navigation'/>
+                    {this.state.mount ?  <Navigation style={this.state.style} id='navigation'/> : null }
                     <Video/>
-                    <Introduction/>
+                    {this.state.mount ? <Introduction/> : null}
                 </div>
                 </>
         )

@@ -1,7 +1,7 @@
 // Gradients taken from: https://webgradients.com/
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
-import {FaGithubSquare, SiMinutemailer} from 'react-icons/all'
+import {FaGithubSquare, FaMailBulk} from 'react-icons/fa'
 
 export default [
   {
@@ -33,7 +33,7 @@ export default [
     description: '#f093fb → #f5576c',
     css: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
     height: 200,
-    contactIcon: <SiMinutemailer/>,
+    contactIcon: <FaMailBulk/>,
     target: "mailto: marianafrentsos@yahoo.com"
   }
 ]

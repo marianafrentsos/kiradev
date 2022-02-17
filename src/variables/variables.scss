@@ -1,3 +1,5 @@
+@use "sass:math";
+
 :root {
   font-family: Montserrat, monospace;
   color: #cdcac0;
@@ -66,9 +68,9 @@ $mq-static-breakpoint: desktop;
     left: 35%;
     width:  $item-size;
     height: $item-size;
-    margin: -($item-size / 2);
+    margin: -($item-size * 0.5);
 
-    $angle: (360 / $item-count);
+    $angle: math.div(360, $item-count);
     $rot: 0;
 
     @for $i from 1 through $item-count {

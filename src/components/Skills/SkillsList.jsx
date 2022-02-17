@@ -1,28 +1,29 @@
 import {
     FaGithubSquare, FaNode,
-    SiAngular,
-    SiBootstrap,
-    SiCss3,
-    SiHtml5,
-    SiJavascript,
-    SiReact, SiStyledcomponents,
-    SiWebstorm,
-} from "react-icons/all";
+    FaAngular,
+    FaBootstrap,
+    FaCss3,
+    FaHtml5,
+    FaJs,
+    FaReact,
+    FaJira,
+    FaBitbucket,
+} from "react-icons/fa"
 import React from "react";
 const SkillsList = () => {
     return (
         <>
             <ul className='kira-circle-container'>
-                <li><SiWebstorm/><span>webstorm</span></li>
+                <li><FaJira/><span>Jira</span></li>
                 <li><FaGithubSquare/><span>Git</span></li>
-                <li><SiCss3/><span>Css3</span></li>
-                <li><SiHtml5/><span>Html5</span></li>
-                <li><SiJavascript/><span>JavaScript</span></li>
-                <li><SiReact/><span>ReactJs</span></li>
-                <li><SiAngular/><span>Angular</span></li>
-                <li><SiBootstrap/><span>Bootstrap</span></li>
+                <li><FaCss3/><span>Css3</span></li>
+                <li><FaHtml5/><span>Html5</span></li>
+                <li><FaJs/><span>JavaScript</span></li>
+                <li><FaReact/><span>ReactJs</span></li>
+                <li><FaAngular/><span>Angular</span></li>
+                <li><FaBootstrap/><span>Bootstrap</span></li>
                 <li><FaNode/><span>NodeJs</span></li>
-                <li><SiStyledcomponents/><span>Styled Components</span></li>
+                <li><FaBitbucket/><span>BitBucket</span></li>
             </ul>
         </>
     )
