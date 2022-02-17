@@ -115,9 +115,9 @@ export default function Projects() {
                                             <span>{item.description}</span>
                                         </p>
                                         {item.technologies ?
-                                        <p className="kira-projects-grid__item-description-body-tech">
-                                            <span>Technologies: </span> <span>{item.technologies}</span>
-                                        </p> : null}
+                                        <div className="kira-projects-grid__item-description-body-tech-wrapper">
+                                            <p>Technologies:</p>  <div className="kira-projects-grid__item-description-body-tech-items">{item.technologies.map((technology, index) => <span key = {index} className="kira-projects-grid__item-description-body-tech-items-single">{technology}</span> )}</div>
+                                        </div> : null}
                                     </div>
                                     {item.btnUrl || item.gitUrl ?
                                     <div className="kira-projects-grid__item-description-btns">

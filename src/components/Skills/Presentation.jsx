@@ -1,11 +1,9 @@
-import {BiWinkSmile} from "react-icons/bi";
 import React from "react";
 import '../../variables/global.scss'
 
 const Presentation = () => {
     return (
-        <>  <div className="separator">
-        </div>
+        <>
             <div id="presentation" className="kira-presentation" >
                 <div className="kira-presentation-about">
                     <h4>Front end developer & programmer </h4>
@@ -33,7 +31,6 @@ const Presentation = () => {
                         <li><span>&#128073;</span><span>Figma designs and mockups</span></li>
                     </ul>
                 </div>
-
             </div>
         </>
     )

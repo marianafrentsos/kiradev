@@ -119,6 +119,31 @@
               &-details {
                 padding-bottom: 2rem
               }
+
+              &-tech {
+                &-wrapper {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 1.5rem;
+                }
+
+                &-items {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: .5rem;
+                  justify-content: center;
+
+                  &-single {
+                    padding: .3rem;
+                    background-color: #494646;
+                    margin: 0 .5rem;
+                    width: 5.5rem;
+                    text-align: center;
+                  }
+
+                }
+              }
             }
 
             &-btns {
@@ -171,6 +196,14 @@
         &-img,
         &-description {
           width: 50%;
+
+          &-body {
+            &-tech {
+              &-wrapper {
+                flex-direction: row;
+              }
+            }
+          }
         }
       }
 
